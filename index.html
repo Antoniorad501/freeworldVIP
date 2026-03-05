@@ -168,22 +168,6 @@
     </style>
 	
 </head>
-<script>
-document.getElementById("vipButton").addEventListener("click", function() {
-    // Afficher un choix simple
-    let choix = prompt("Choisissez votre plateforme VIP :\n1 - WhatsApp\n2 - Telegram", "1");
-    
-    if(choix === "1") {
-        // Redirige vers WhatsApp
-        window.open("https://wa.me/+261377165279", "_blank");
-    } else if(choix === "2") {
-        // Redirige vers Telegram
-        window.open("https://t.me/+-0R792hWIC82NmY0", "_blank");
-    } else {
-        alert("Choix invalide, veuillez réessayer !");
-    }
-});
-</script>
 <body>
 
 <header>
@@ -223,9 +207,26 @@ document.getElementById("vipButton").addEventListener("click", function() {
     © FREEWORLD PREMIUM VIP 2026 
 	Reservados todos los derechos
 </footer>
+	<script>
+document.getElementById("vipButton").addEventListener("click", function() {
+    // Afficher un choix simple
+    let choix = prompt("Choisissez votre plateforme VIP :\n1 - WhatsApp\n2 - Telegram", "1");
+    
+    if(choix === "1") {
+        // Redirige vers WhatsApp
+        window.open("https://wa.me/+261377165279", "_blank");
+    } else if(choix === "2") {
+        // Redirige vers Telegram
+        window.open("https://t.me/+-0R792hWIC82NmY0", "_blank");
+    } else {
+        alert("Choix invalide, veuillez réessayer !");
+    }
+});
+</script>
 </body>
 
 </html>
+
 
 
 
