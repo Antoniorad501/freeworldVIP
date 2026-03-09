@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -105,7 +105,7 @@
 
 <div class="menu">
 
-    <!-- Menu Group VIP -->
+    <!-- Menu Group VIP
  <div class="card">
     <h2> Grupos VIP </h2>
     <a class="premium" href="https://wa.me/+261377165279" target="_blank">Premium 15$</a>
@@ -113,7 +113,7 @@
     <a class="diamond" href="https://tutuduanyu.org/joinchat/eihFkGKqm06sPgACqUQisA" target="_blank">Diamond 35$</a>
 </div>
 
-    <!-- Menu Fichier Cloud VIP -->
+    <!-- Menu Fichier Cloud VIP
   <div class="card">
     <h2> Cloud VIP </h2>
     <a class="premium" href="https://wa.me/+261377165279" target="_blank">Premium 15$</a>
@@ -122,6 +122,142 @@
 </div>
 
 </div>
+
+</body>
+    <!-- </html> -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>VIP FREEWORLD - Choisir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #121212);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Cartes des menus */
+        .card {
+            background-color: #222;
+            border-radius: 15px;
+            padding: 40px 30px;
+            width: 220px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 5px rgba(255,165,0,0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,165,0,0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 5px rgba(255,165,0,0.6); }
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ff9800;
+        }
+
+        /* Liens internes avec couleurs par type */
+        .card a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .premium { background-color: #ff9800; }
+        .gold { background-color: #00bfff; }
+        .diamond { background-color: #b9f2ff; color: #000; }
+
+        .premium:hover { box-shadow: 0 5px 15px rgba(255,165,0,0.6); transform: scale(1.1); }
+        .gold:hover { box-shadow: 0 5px 15px rgba(0,191,255,0.6); transform: scale(1.1); }
+        .diamond:hover { box-shadow: 0 5px 15px rgba(185,242,255,0.6); transform: scale(1.1); }
+
+        /* Boutons fixes en bas */
+        .bottom-btn {
+            position: fixed;
+            bottom: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .bottom-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255,165,0,0.6);
+        }
+
+        .btn-retour {
+            left: 20px;
+            background-color: #ff0000; /* rouge */
+        }
+
+        .btn-payment {
+            right: 20px;
+            background-color: #25D366; /* vert */
+        }
+    </style>
+</head>
+<body>
+
+<h1>VIP FREEWORLD - Choisir une option</h1>
+
+<div class="menu">
+
+    <!-- Menu Group VIP -->
+    <div class="card">
+        <h2>Group VIP</h2>
+        <a class="premium" href="https://wa.me/+261377165279" target="_blank">Premium 15$</a>
+        <a class="gold" href="https://t.me/+-0R792hWIC82NmY0" target="_blank">Gold 20$</a>
+        <a class="diamond" href="https://tutuduanyu.org/joinchat/eihFkGKqm06sPgACqUQisA" target="_blank">Diamond 35$</a>
+    </div>
+
+    <!-- Menu Fichier Cloud VIP -->
+    <div class="card">
+        <h2>Fichier Cloud VIP</h2>
+        <a href="https://drive.google.com/..." target="_blank">Fichier 1</a>
+        <a href="https://drive.google.com/..." target="_blank">Fichier 2</a>
+        <a href="https://drive.google.com/..." target="_blank">Fichier 3</a>
+    </div>
+
+</div>
+
+<!-- Bouton Retour en bas gauche -->
+<a class="bottom-btn btn-retour" href="index.html">Retour</a>
+
+<!-- Bouton Payment accepté en bas droite -->
+<a class="bottom-btn btn-payment" href="#">Payment accepté</a>
 
 </body>
 </html>
