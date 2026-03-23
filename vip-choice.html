@@ -137,7 +137,31 @@
 <a class="bottom-btn btn-retour" href="index.html">Atrás</a>
 
 <!-- Bouton Payment accepté en bas droite -->
-<a class="bottom-btn btn-payment" href="#">Método de pago</a>
+<a class="bottom-btn btn-payment" href="javascript:void(0)" onclick="togglePayment()">Método de pago</a>
+<div id="paymentBox" style="
+    display:none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: left;
+">
+    <p><strong>Méthodes de paiement :</strong></p>
+    <ul style="padding-left: 15px;">
+        <li>💳 PayPal</li>
+        <li>📱 MVola / Orange Money</li>
+        <li>💰 USDT (Crypto)</li>
+    </ul>
+</div>
 
+<script>
+function togglePayment() {
+    var box = document.getElementById("paymentBox");
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+</script>
 </body>
 </html>
