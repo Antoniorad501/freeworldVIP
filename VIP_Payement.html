@@ -19,7 +19,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Boutons de crypto */
+/* Boutons de paiement */
 .pay-btn {
     margin: 10px;
     padding: 15px 25px;
@@ -36,11 +36,12 @@ h1 {
     box-shadow: 0 0 15px rgba(255,165,0,0.6);
 }
 
+/* Couleurs par type */
 .usdt { background-color: #26A17B; color: white; }
 .trx { background-color: #FF0000; color: white; }
 .sol { background-color: #66F9FF; color: black; }
 .btc { background-color: #F7931A; color: black; }
-.wallet { background-color: #F6932A; color: black; }
+.wallet { background-color: #007BFF; color: white; } /* Bleu */
 .pix { background-color: #25D366; color: white; }
 
 /* Fenêtre modale */
@@ -95,66 +96,69 @@ h1 {
 </head>
 <body>
 
-<h1>Elija su método de pago </h1>
+<h1>Elija su método de pago</h1>
 
 <!-- Boutons paiement -->
 <button class="pay-btn usdt" onclick="openModal('usdtModal')">USDT</button>
 <button class="pay-btn trx" onclick="openModal('trxModal')">TRX</button>
 <button class="pay-btn sol" onclick="openModal('solModal')">SOLANA</button>
 <button class="pay-btn btc" onclick="openModal('btcModal')">BTC</button>
-<button class="pay-btn wallet" onclick="openModal('btcModal')">WALLET (Telegram)</button>
+<button class="pay-btn wallet" onclick="openModal('walletModal')">WALLET (Telegram)</button>
 <button class="pay-btn pix" onclick="openModal('pixModal')">PIX</button>
 
-<!-- Modale USDT -->
+<!-- Modales -->
+
+<!-- USDT -->
 <div id="usdtModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('usdtModal')">&times;</span>
         <h2>Pago USDT</h2>
-        <p id="usdtAddress">Dirección :<strong>0x1234...abcd</strong></p>
+        <p>Dirección : <strong>0x1234...abcd</strong></p>
         <button class="copy-btn" onclick="copyText('0x1234...abcd')">Copiar la dirección</button>
     </div>
 </div>
 
-<!-- Modale TRX -->
+<!-- TRX -->
 <div id="trxModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('trxModal')">&times;</span>
         <h2>Pago TRX</h2>
-        <p id="trxAddress">Dirección :<strong>TXYZ1234TRXADDRESS</strong></p>
+        <p>Dirección : <strong>TXYZ1234TRXADDRESS</strong></p>
         <button class="copy-btn" onclick="copyText('TXYZ1234TRXADDRESS')">Copiar la dirección</button>
     </div>
 </div>
 
-<!-- Modale SOLANA -->
+<!-- SOLANA -->
 <div id="solModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('solModal')">&times;</span>
         <h2>Pago SOLANA</h2>
-        <p id="solAddress">Dirección :<strong>SOL1234SOLADDRESS</strong></p>
+        <p>Dirección : <strong>SOL1234SOLADDRESS</strong></p>
         <button class="copy-btn" onclick="copyText('SOL1234SOLADDRESS')">Copiar la dirección</button>
     </div>
 </div>
 
-<!-- Modale BTC -->
+<!-- BTC -->
 <div id="btcModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('btcModal')">&times;</span>
         <h2>Pago BTC</h2>
-        <p id="btcAddress">Dirección :<strong>1ABCD...XYZ</strong></p>
-        <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
-    </div>
-</div>
-    <!-- Modale wallet -->
-<div id="walletModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('walletModal')">&times;</span>
-        <h2>Pago WALLET (Telegram)</h2>
-        <p id="btcAddress">Dirección : <strong>1ABCD...XYZ</strong></p>
+        <p>Dirección : <strong>1ABCD...XYZ</strong></p>
         <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
     </div>
 </div>
 
-<!-- Modale PIX -->
+<!-- Wallet Telegram -->
+<div id="walletModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('walletModal')">&times;</span>
+        <h2>Pago WALLET (Telegram)</h2>
+        <p>Adresse Wallet Telegram : <strong>t.me/TON_WALLET</strong></p>
+        <button class="copy-btn" onclick="copyText('t.me/TON_WALLET')">Copier l'adresse</button>
+    </div>
+</div>
+
+<!-- PIX -->
 <div id="pixModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('pixModal')">&times;</span>
@@ -167,7 +171,7 @@ h1 {
             <li>Confirmez la transaction.</li>
         </ol>
         <p><strong>Clé PIX : 123e4567-e89b-12d3-a456-426614174000</strong></p>
-        <button class="copy-btn" onclick="copyText('123e4567-e89b-12d3-a456-426614174000')">Copiar la dirección : </button>
+        <button class="copy-btn" onclick="copyText('123e4567-e89b-12d3-a456-426614174000')">Copier la clé PIX</button>
     </div>
 </div>
 
@@ -185,7 +189,7 @@ function closeModal(id){
 // Copier texte
 function copyText(text){
     navigator.clipboard.writeText(text).then(()=>{
-        alert("¡Dirección copiada!");
+        alert("Adresse copiée !");
     });
 }
 </script>
