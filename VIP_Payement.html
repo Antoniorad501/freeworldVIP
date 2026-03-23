@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>VIP - Choisir le paiement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #121212);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
 
+h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+/* Boutons de crypto */
+.pay-btn {
+    margin: 10px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pay-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,165,0,0.6);
+}
+
+.usdt { background-color: #26A17B; color: white; }
+.trx { background-color: #FF0000; color: white; }
+.sol { background-color: #66F9FF; color: black; }
+.btc { background-color: #F7931A; color: black; }
+.pix { background-color: #25D366; color: white; }
+
+/* Fenêtre modale */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right:0; bottom:0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #FF9800;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.copy-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #FF9800;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    background-color: #FFC107;
+}
+</style>
+</head>
+<body>
+
+<h1>Choisir votre moyen de paiement</h1>
+
+<!-- Boutons paiement -->
+<button class="pay-btn usdt" onclick="openModal('usdtModal')">USDT</button>
+<button class="pay-btn trx" onclick="openModal('trxModal')">TRX</button>
+<button class="pay-btn sol" onclick="openModal('solModal')">SOLANA</button>
+<button class="pay-btn btc" onclick="openModal('btcModal')">BTC</button>
+<button class="pay-btn pix" onclick="openModal('pixModal')">PIX</button>
+
+<!-- Modale USDT -->
+<div id="usdtModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('usdtModal')">&times;</span>
+        <h2>Paiement USDT</h2>
+        <p id="usdtAddress">Adresse : <strong>0x1234...abcd</strong></p>
+        <button class="copy-btn" onclick="copyText('0x1234...abcd')">Copier l'adresse</button>
+    </div>
+</div>
+
+<!-- Modale TRX -->
+<div id="trxModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('trxModal')">&times;</span>
+        <h2>Paiement TRX</h2>
+        <p id="trxAddress">Adresse : <strong>TXYZ1234TRXADDRESS</strong></p>
+        <button class="copy-btn" onclick="copyText('TXYZ1234TRXADDRESS')">Copier l'adresse</button>
+    </div>
+</div>
+
+<!-- Modale SOLANA -->
+<div id="solModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('solModal')">&times;</span>
+        <h2>Paiement SOLANA</h2>
+        <p id="solAddress">Adresse : <strong>SOL1234SOLADDRESS</strong></p>
+        <button class="copy-btn" onclick="copyText('SOL1234SOLADDRESS')">Copier l'adresse</button>
+    </div>
+</div>
+
+<!-- Modale BTC -->
+<div id="btcModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('btcModal')">&times;</span>
+        <h2>Paiement BTC</h2>
+        <p id="btcAddress">Adresse : <strong>1ABCD...XYZ</strong></p>
+        <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copier l'adresse</button>
+    </div>
+</div>
+
+<!-- Modale PIX -->
+<div id="pixModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('pixModal')">&times;</span>
+        <h2>Paiement PIX</h2>
+        <p>Suivez ce tutoriel pour effectuer votre paiement via votre wallet Telegram :</p>
+        <ol style="text-align:left; margin-left:20px;">
+            <li>Ouvrez votre application Telegram et votre wallet intégré.</li>
+            <li>Sélectionnez "Envoyer un paiement".</li>
+            <li>Copiez le QR code PIX ou clé PIX ci-dessous.</li>
+            <li>Confirmez la transaction.</li>
+        </ol>
+        <p><strong>Clé PIX : 123e4567-e89b-12d3-a456-426614174000</strong></p>
+        <button class="copy-btn" onclick="copyText('123e4567-e89b-12d3-a456-426614174000')">Copier la clé PIX</button>
+    </div>
+</div>
+
+<script>
+// Ouvrir modale
+function openModal(id){
+    document.getElementById(id).style.display = 'flex';
+}
+
+// Fermer modale
+function closeModal(id){
+    document.getElementById(id).style.display = 'none';
+}
+
+// Copier texte
+function copyText(text){
+    navigator.clipboard.writeText(text).then(()=>{
+        alert("Adresse copiée !");
+    });
+}
+</script>
+
+</body>
+</html>
