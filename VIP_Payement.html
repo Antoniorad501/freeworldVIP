@@ -40,6 +40,7 @@ h1 {
 .trx { background-color: #FF0000; color: white; }
 .sol { background-color: #66F9FF; color: black; }
 .btc { background-color: #F7931A; color: black; }
+.wallet { background-color: #F6932A; color: black; }
 .pix { background-color: #25D366; color: white; }
 
 /* Fenêtre modale */
@@ -101,14 +102,14 @@ h1 {
 <button class="pay-btn trx" onclick="openModal('trxModal')">TRX</button>
 <button class="pay-btn sol" onclick="openModal('solModal')">SOLANA</button>
 <button class="pay-btn btc" onclick="openModal('btcModal')">BTC</button>
-<button class="pay-btn btc" onclick="openModal('btcModal')">WALLET (Telegram)</button>
+<button class="pay-btn wallet" onclick="openModal('btcModal')">WALLET (Telegram)</button>
 <button class="pay-btn pix" onclick="openModal('pixModal')">PIX</button>
 
 <!-- Modale USDT -->
 <div id="usdtModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('usdtModal')">&times;</span>
-        <h2>Paiement USDT</h2>
+        <h2>Pago USDT</h2>
         <p id="usdtAddress">Dirección :<strong>0x1234...abcd</strong></p>
         <button class="copy-btn" onclick="copyText('0x1234...abcd')">Copiar la dirección</button>
     </div>
@@ -118,7 +119,7 @@ h1 {
 <div id="trxModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('trxModal')">&times;</span>
-        <h2>Paiement TRX</h2>
+        <h2>Pago TRX</h2>
         <p id="trxAddress">Dirección :<strong>TXYZ1234TRXADDRESS</strong></p>
         <button class="copy-btn" onclick="copyText('TXYZ1234TRXADDRESS')">Copiar la dirección</button>
     </div>
@@ -128,7 +129,7 @@ h1 {
 <div id="solModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('solModal')">&times;</span>
-        <h2>Paiement SOLANA</h2>
+        <h2>Pago SOLANA</h2>
         <p id="solAddress">Dirección :<strong>SOL1234SOLADDRESS</strong></p>
         <button class="copy-btn" onclick="copyText('SOL1234SOLADDRESS')">Copiar la dirección</button>
     </div>
@@ -138,7 +139,7 @@ h1 {
 <div id="btcModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('btcModal')">&times;</span>
-        <h2>Paiement BTC</h2>
+        <h2>Pago BTC</h2>
         <p id="btcAddress">Dirección :<strong>1ABCD...XYZ</strong></p>
         <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
     </div>
@@ -147,7 +148,7 @@ h1 {
 <div id="walletModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('walletModal')">&times;</span>
-        <h2>Paiement WALLET (Telegram)</h2>
+        <h2>Pago WALLET (Telegram)</h2>
         <p id="btcAddress">Dirección : <strong>1ABCD...XYZ</strong></p>
         <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
     </div>
@@ -157,7 +158,7 @@ h1 {
 <div id="pixModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('pixModal')">&times;</span>
-        <h2>Paiement PIX</h2>
+        <h2>Pago PIX</h2>
         <p>Suivez ce tutoriel pour effectuer votre paiement via votre wallet Telegram :</p>
         <ol style="text-align:left; margin-left:20px;">
             <li>Ouvrez votre application Telegram et votre wallet intégré.</li>
