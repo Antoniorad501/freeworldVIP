@@ -94,13 +94,14 @@ h1 {
 </head>
 <body>
 
-<h1>Choisir votre moyen de paiement</h1>
+<h1>Elija su método de pago </h1>
 
 <!-- Boutons paiement -->
 <button class="pay-btn usdt" onclick="openModal('usdtModal')">USDT</button>
 <button class="pay-btn trx" onclick="openModal('trxModal')">TRX</button>
 <button class="pay-btn sol" onclick="openModal('solModal')">SOLANA</button>
 <button class="pay-btn btc" onclick="openModal('btcModal')">BTC</button>
+<button class="pay-btn btc" onclick="openModal('btcModal')">WALLET (Telegram)</button>
 <button class="pay-btn pix" onclick="openModal('pixModal')">PIX</button>
 
 <!-- Modale USDT -->
@@ -108,8 +109,8 @@ h1 {
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('usdtModal')">&times;</span>
         <h2>Paiement USDT</h2>
-        <p id="usdtAddress">Adresse : <strong>0x1234...abcd</strong></p>
-        <button class="copy-btn" onclick="copyText('0x1234...abcd')">Copier l'adresse</button>
+        <p id="usdtAddress">Dirección :<strong>0x1234...abcd</strong></p>
+        <button class="copy-btn" onclick="copyText('0x1234...abcd')">Copiar la dirección</button>
     </div>
 </div>
 
@@ -118,8 +119,8 @@ h1 {
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('trxModal')">&times;</span>
         <h2>Paiement TRX</h2>
-        <p id="trxAddress">Adresse : <strong>TXYZ1234TRXADDRESS</strong></p>
-        <button class="copy-btn" onclick="copyText('TXYZ1234TRXADDRESS')">Copier l'adresse</button>
+        <p id="trxAddress">Dirección :<strong>TXYZ1234TRXADDRESS</strong></p>
+        <button class="copy-btn" onclick="copyText('TXYZ1234TRXADDRESS')">Copiar la dirección</button>
     </div>
 </div>
 
@@ -128,8 +129,8 @@ h1 {
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('solModal')">&times;</span>
         <h2>Paiement SOLANA</h2>
-        <p id="solAddress">Adresse : <strong>SOL1234SOLADDRESS</strong></p>
-        <button class="copy-btn" onclick="copyText('SOL1234SOLADDRESS')">Copier l'adresse</button>
+        <p id="solAddress">Dirección :<strong>SOL1234SOLADDRESS</strong></p>
+        <button class="copy-btn" onclick="copyText('SOL1234SOLADDRESS')">Copiar la dirección</button>
     </div>
 </div>
 
@@ -138,8 +139,17 @@ h1 {
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal('btcModal')">&times;</span>
         <h2>Paiement BTC</h2>
-        <p id="btcAddress">Adresse : <strong>1ABCD...XYZ</strong></p>
-        <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copier l'adresse</button>
+        <p id="btcAddress">Dirección :<strong>1ABCD...XYZ</strong></p>
+        <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
+    </div>
+</div>
+    <!-- Modale wallet -->
+<div id="walletModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('walletModal')">&times;</span>
+        <h2>Paiement WALLET (Telegram)</h2>
+        <p id="btcAddress">Dirección : <strong>1ABCD...XYZ</strong></p>
+        <button class="copy-btn" onclick="copyText('1ABCD...XYZ')">Copiar la dirección</button>
     </div>
 </div>
 
@@ -156,7 +166,7 @@ h1 {
             <li>Confirmez la transaction.</li>
         </ol>
         <p><strong>Clé PIX : 123e4567-e89b-12d3-a456-426614174000</strong></p>
-        <button class="copy-btn" onclick="copyText('123e4567-e89b-12d3-a456-426614174000')">Copier la clé PIX</button>
+        <button class="copy-btn" onclick="copyText('123e4567-e89b-12d3-a456-426614174000')">Copiar la dirección : </button>
     </div>
 </div>
 
@@ -174,7 +184,7 @@ function closeModal(id){
 // Copier texte
 function copyText(text){
     navigator.clipboard.writeText(text).then(()=>{
-        alert("Adresse copiée !");
+        alert("¡Dirección copiada!");
     });
 }
 </script>
