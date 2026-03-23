@@ -27,7 +27,7 @@
             flex-wrap: wrap;
         }
 
-        /* Cartes des menus */
+        /* Carte Group VIP */
         .card {
             background-color: #222;
             border-radius: 15px;
@@ -90,54 +90,33 @@
             box-shadow: 0 5px 15px rgba(255,165,0,0.6);
         }
 
-        .btn-retour {
-            left: 20px;
-            background-color: #ff0000; /* rouge */
-        }
+        .btn-retour { left: 20px; background-color: #ff0000; }
+        .btn-payment { right: 20px; background-color: #25D366; }
 
-        .btn-payment {
-            right: 20px;
-            background-color: #25D366; /* vert */
-        }
-        /* Titre Group VIP vert et reste vert au hover */
-.group-vip h2 {
-    color: #FF0000; /* vert */
-}
-
-.group-vip h2:hover {
-    color: #FF0FF0; /* reste vert même au survol */
-}
+        /* Titre Group VIP */
+        .group-vip h2 { color: #FF0000; }
+        .group-vip h2:hover { color: #FF0FF0; }
     </style>
 </head>
 <body>
 
-<h1>VIP FREEWORLD PREMIUM- Elige una opción</h1>
+<h1>VIP FREEWORLD PREMIUM - Elegir una opción </h1>
 
 <div class="menu">
-
-   <!-- Menu Group VIP -->
-<div class="card group-vip">
-    <h2>Group VIP</h2>
-    <a class="premium" href="https://wa.me/+261377165279" target="_blank">Premium 15$</a>
-    <a class="gold" href="https://t.me/+-0R792hWIC82NmY0" target="_blank">Gold 20$</a>
-    <a class="diamond" href="https://tutuduanyu.org/joinchat/eihFkGKqm06sPgACqUQisA" target="_blank">Diamond 35$</a>
+    <!-- Menu Group VIP -->
+    <div class="card group-vip">
+        <h2>Group VIP</h2>
+        <a class="premium" href="https://wa.me/+261386710429" target="_blank">Premium 15$</a>
+        <a class="gold" href="https://wa.me/+261386710429" target="_blank">Gold 20$</a>
+        <a class="diamond" href="https://wa.me/+261386710429" target="_blank">Diamond 35$</a>
+    </div>
 </div>
 
-    <!-- Menu Fichier Cloud VIP -->
-      <div class="card">
-    <h2> Cloud VIP </h2>
-    <a class="premium" href="https://wa.me/+261377165279" target="_blank">Premium 15$</a>
-    <a class="gold" href="https://t.me/+-0R792hWIC82NmY0" target="_blank">Gold 20$</a>
-    <a class="diamond" href="https://tutuduanyu.org/joinchat/eihFkGKqm06sPgACqUQisA" target="_blank">Diamond 35$</a>
-</div>
-
-</div>
-
-<!-- Bouton Retour en bas gauche -->
+<!-- Boutons en bas -->
 <a class="bottom-btn btn-retour" href="index.html">Atrás</a>
-
-<!-- Bouton Payment accepté en bas droite -->
 <a class="bottom-btn btn-payment" href="javascript:void(0)" onclick="togglePayment()">Método de pago</a>
+
+<!-- Box de paiement -->
 <div id="paymentBox" style="
     display:none;
     position: fixed;
@@ -149,10 +128,10 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     text-align: left;
 ">
-    <p><strong> Método de pago actualmente disponible :</strong></p>
+    <p><strong>Méthodes de paiement disponibles :</strong></p>
     <ul style="padding-left: 15px;">
-        <li>💰 Crypto (USDT, TRX, ETH, SOL, BTC) </li>
-        <li>💳 PIX </li>
+        <li>💰 Crypto (USDT, TRX, ETH, SOL, BTC)</li>
+        <li>💳 PIX</li>
     </ul>
 </div>
 
@@ -162,5 +141,6 @@ function togglePayment() {
     box.style.display = (box.style.display === "block") ? "none" : "block";
 }
 </script>
+
 </body>
 </html>
